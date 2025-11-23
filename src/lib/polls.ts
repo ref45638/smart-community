@@ -1,5 +1,5 @@
 import { supabase } from './supabase'
-import { Poll, Vote, PollResult } from '@/types'
+import { Poll, PollResult } from '@/types'
 
 /**
  * 建立新投票
