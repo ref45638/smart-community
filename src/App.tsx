@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import AdminLogin from './pages/admin/Login'
 import QRCodeGenerator from './pages/admin/QRCodeGenerator'
 import PollManager from './pages/admin/PollManager'
@@ -8,7 +8,7 @@ import VotePage from './pages/resident/VotePage'
 
 function App() {
     return (
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <HashRouter>
             <Routes>
                 {/* Admin Routes */}
                 <Route path="/admin/login" element={<AdminLogin />} />
@@ -24,7 +24,7 @@ function App() {
                 {/* Redirect */}
                 <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
