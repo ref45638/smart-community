@@ -8,12 +8,13 @@ import VotePage from './pages/resident/VotePage'
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <Routes>
                 {/* Admin Routes */}
                 <Route path="/admin/login" element={<AdminLogin />} />
                 <Route path="/admin/qrcode" element={<QRCodeGenerator />} />
                 <Route path="/admin/polls" element={<PollManager />} />
+                <Route path="/admin" element={<Navigate to="/admin/qrcode" replace />} />
 
                 {/* Resident Routes */}
                 <Route path="/" element={<ResidentHome />} />

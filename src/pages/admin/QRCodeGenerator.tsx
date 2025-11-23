@@ -58,7 +58,7 @@ export default function QRCodeGenerator() {
         }
 
         const token = await generateQRToken(building, unitNumber, parseInt(floor))
-        const loginUrl = `${window.location.origin}/login?token=${token}`
+        const loginUrl = `${window.location.origin}${import.meta.env.BASE_URL}login?token=${token}`
         setQrCodeUrl(loginUrl)
     }
 
